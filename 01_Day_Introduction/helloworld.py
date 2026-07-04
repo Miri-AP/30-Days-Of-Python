@@ -40,6 +40,7 @@ p1=[2,3]
 p2=[10,8]
 distance = ((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)**0.5
 print("Euclidean distance between", p1, "and", p2, "is:", distance)
+# answer: 9.433981132056603
 
 import math
 print(math.dist([2,3],[10,8]))
