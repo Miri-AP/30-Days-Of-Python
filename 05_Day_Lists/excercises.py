@@ -107,3 +107,59 @@ redux_index = full_stack_copy.index('Redux')
 full_stack_copy.insert(redux_index + 1, 'Python')
 full_stack_copy.insert(redux_index + 2, 'SQL')
 print(full_stack_copy)
+
+## Exercises: Level 2
+
+# 1. The following is a list of 10 students ages:
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+ages.sort()
+# Sort the list and find the min and max age
+print('Sorted ages:', ages)
+min_age = ages[0]
+max_age = ages[-1]
+print('Min age:', min_age)
+print('Max age:', max_age)
+# Add the min age and the max age again to the list
+ages.append(min_age)
+ages.append(max_age)
+print('Ages with min and max added:', ages)
+# Find the median age (one middle item or two middle items divided by two)
+median_age = ages[len(ages)//2] if len(ages) % 2 == 1 else (ages[len(ages)//2 - 1] + ages[len(ages)//2]) / 2
+print('Median age:', median_age)
+# Find the average age (sum of all items divided by their number )
+average_age = sum(ages) / len(ages)
+print('Average age:', average_age)
+# Find the range of the ages (max minus min)
+range_ages = max_age - min_age
+print('Range of ages:', range_ages)
+# Compare the value of (min - average) and (max - average), use abs() method
+min_diff = abs(min_age - average_age)
+max_diff = abs(max_age - average_age)
+print('Difference between min and average:', min_diff)
+print('Difference between max and average:', max_diff)
+
+# 1. Find the middle country(ies) in the countries list (from data/countries.py)
+from countries import countries
+middle_index = len(countries) // 2
+if len(countries) % 2 == 1:
+    middle_countries = [countries[middle_index]]
+else:
+    middle_countries = [countries[middle_index - 1], countries[middle_index]]
+print('Middle country(ies):', middle_countries)
+# 2. Divide the countries list into two equal lists if it is even if not one more country for the first half.
+if len(countries) % 2 == 0:
+    first_half = countries[:len(countries)//2]
+    second_half = countries[len(countries)//2:]
+else:
+    first_half = countries[:len(countries)//2 + 1]
+    second_half = countries[len(countries)//2 + 1:]
+print('First half:', first_half, 'Length of first half:', len(first_half))
+print('Second half:', second_half, 'Length of second half:', len(second_half))
+
+# 3. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+countries_list = ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']
+first_country, second_country, third_country, *scandic_countries = countries_list
+print('First country:', first_country)
+print('Second country:', second_country)
+print('Third country:', third_country)
+print('Scandic countries:', scandic_countries)
